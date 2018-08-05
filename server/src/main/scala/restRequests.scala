@@ -17,7 +17,7 @@ object restRequests extends App {
 
   val httpClient = Http1Client[IO]().unsafeRunSync()
 
-  val start = System.nanoTime()
+
 
   def elapsedTimeMillis(start: Long): Long = {
     val nanos = System.nanoTime() - start nanos;
@@ -42,10 +42,16 @@ object restRequests extends App {
     case (response, time) => (response.id, time)
   })
 
-  val (combined, individual) = result.unsafeRunSync()
-  println(combined)
-  println(individual)
-  println(s"Total time: ${elapsedTimeMillis(start)}")
+  (1 to 100).foreach { _ =>
+    val start = System.nanoTime()
+    val (combined, individual) = result.unsafeRunSync()
+    println(combined)
+    println(individual)
+    println(s"Total time: ${elapsedTimeMillis(start)}")
+    Thread.sleep(500)
+  }
+
+
 
   //  val ids = postList.map(a => a.id)
   //

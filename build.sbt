@@ -18,7 +18,7 @@ lazy val catsVersion = "1.1.0"
 lazy val kittensVersion = "1.0.0-RC3"
 lazy val monocleVersion = "1.5.0"
 lazy val circeVersion = "0.9.1"
-lazy val Http4sVersion = "0.18.5"
+lazy val Http4sVersion = "0.18.15"
 lazy val doobieVersion = "0.5.2"
 
 
